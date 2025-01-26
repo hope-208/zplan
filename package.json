@@ -1,6 +1,7 @@
 {
   "name": "zplan",
   "description": "zplan",
+  "author": "Nadeshda Telepenina <https://github.com/hope-208>",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -10,7 +11,8 @@
     "format": "prettier --write './src/**/*.{pug,js,jsx,ts,tsx}'",
     "build": "vite build",
     "preview": "vite preview --open",
-    "buildpreview": "vite build && vite preview --open"
+    "buildpreview": "vite build && vite preview --open",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
@@ -20,6 +22,7 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.3",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
@@ -32,5 +35,8 @@
   "dependencies": {
     "cssnano": "^7.0.6",
     "the-new-css-reset": "^1.11.3"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   }
 }
