@@ -1,0 +1,8 @@
+mixin advantage(img, title, subtitle)
+
+  .advantage(class="sm:w-fill sm:max-w-1/2 lg:max-w-1/3 lg:w-full")
+    .flex.items-center.justify-center.flex-nowrap.w-full.max-w-full.p-4.gap-4.rounded-xl.border.border-solid.border-gray-100.bg-white.shadow-lg(class='advantage-item')
+      img(src=img, alt='', class="max-w-[50px]")
+      .flex.flex-col.gap-2(class="max-w-[220px]")
+        h4(class="text-left text-sm font-semibold uppercase text-gray-700")=title
+        p(class="text-left text-xs text-gray-700")=subtitle

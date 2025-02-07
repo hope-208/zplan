@@ -2,15 +2,16 @@ include ./components/header/header.pug
 main(class="container mx-auto")
   .flex(class="lead container w-full lg:max-w-7xl mx-auto lg:px-4")
 
-    //- include ./mixin/slide.pug
-    //- +slide('./src/assets/img/lead-1.svg', 'CRM-система и интернет-магазин запчастей',
-    //- 'в одном',
-    //- 'Комплексное решение для продажи запчастей: склад, проценка, работа с поставщиками, статистика, интеграции с другими сервисами — всё в одном!')
+    include ./mixin/advantage.pug
 
-//- - var slides = [
-//-   ['./src/assets/img/lead-1.svg', 'CRM-система и интернет-магазин запчастей', 'в одном', 'Комплексное решение для продажи запчастей: склад, проценка, работа с поставщиками, статистика, интеграции с другими сервисами — всё в одном!'],
-//-   ['./src/assets/img/lead-2.svg', 'CRM-система и интернет-магазин запчастей', 'в одном', 'Комплексное решение для продажи запчастей: склад, проценка, работа с поставщиками, статистика, интеграции с другими сервисами — всё в одном!']
-//- ];
+  .flex.flex-col.py-8.px-4.gap-4(class="advantages sm:flex-row sm:justify-center sm:flex-wrap lg:flex-nowrap lg:max-w-7xl lg:mx-auto lg:gap-8")
+    +advantage('./src/assets/img/timer.svg',
+    'Программа для магазинов автозапчастей',
+    'Начните успешно торговать с нами всего за 1 час')
+    +advantage('./src/assets/img/check.svg',
+    'Профессиональная платформа',
+    'Более 15 лет в разработке систем по продаже запчастей')
+    +advantage('./src/assets/img/moneybox.svg',
+    'Всего 5 500 рублей в месяц',
+    'Мы предоставляем максимальный функционал за минимальные деньги на рынке!')
 
-//- each slide in slides
-//-   +slide(slide[0], slide[1], slide[2], slide[3])
