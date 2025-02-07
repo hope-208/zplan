@@ -1,0 +1,7 @@
+mixin newsCard(title, date)
+
+  .newsCard.w-full.p-4.gap-4.rounded-xl.border.border-solid.border-gray-100.bg-white.shadow-lg(class="")
+    .flex.flex-col.gap-2(class="")
+      h5(class="text-left text-lg font-semibold text-gray-900")!=title
+      a(class="text-left text-lg font-bold text-gray-900") Подробнее >
+      p.text-right.text-xs=date

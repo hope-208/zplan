@@ -41,3 +41,19 @@ main(class="container mx-auto")
         'Zplan включает в&nbsp;себя набор функций по работе с&nbsp;поставщиками и&nbsp;его складами, которые позволяют с&nbsp;большой скоростью найти нужное предложение по&nbsp;покупки автозапчастей. А&nbsp;также вести мониторинг автозапчастей — проценку.',
         'Благодаря Zplan Вы сможете быстро выгрузить остатки запчастей и&nbsp;немедленно начать их&nbsp;продажу.'
     )
+
+  .flex.flex-col.px-4.py-8
+    h3.font-bold.text-5xl Новости
+
+    include ./mixin/news-card.pug
+    .flex.flex-col.py-4.news-cards.gap-8.py-8
+      +newsCard('Lorem ipsum dolor sit amet consectetur.',
+        '28.12.2024')
+      +newsCard('Lorem ipsum dolor sit amet consectetur.',
+        '28.12.2024')
+      +newsCard('Lorem ipsum dolor sit amet consectetur.',
+        '28.12.2024')
+      +newsCard('Lorem ipsum dolor sit amet consectetur.',
+        '28.12.2024')
+
+    a.px-4.py-2.mx-auto.mt-2.mb-4.rounded-xl.border.border-gray-700.text-lg.font-semibold.text-gray-700.text-center Все новости
