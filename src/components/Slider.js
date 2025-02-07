@@ -11,14 +11,18 @@ export default class Slider {
     if (slide) {
       document.querySelector('.lead').innerHTML = `
         <div class="slide">
-            <div class="flex flex-col p-4 gap-4"><img src="${slide.img}" alt="">
-              <div class="block">
-                <h1 class="text-3xl text-center font-semibold text-gray-700">${slide.title}</h1>
-                <h1 class="text-3xl text-center font-semibold text-emerald-400">${slide.titleSpan}</h1>
+          <div class="flex flex-col w-full xl:p-0 xl:py-8 xl:flex-row-reverse justify-center xl:justify-between p-4 xl:px-4 gap-4 md:gap-8 sm:max-w-8/10 xl:max-w-full mx-auto xl:mx-0">
+            <img class="flex justify-center items-center max-w-[200px] mx-auto md:max-w-[300px] lg:max-w-[520px]" src="${slide.img}" alt="" />
+            <div class="flex flex-col justify-center xl:items-start gap-4 md:gap-8 mx-auto xl:mx-0">
+              <div class="block sm:max-w-7/10 md:w-full mx-auto md:mx-0 md:max-w-full">
+                <h1 class="text-3xl sm:text-4xl lg:text-6xl text-center xl:text-left font-semibold lg:font-bold text-gray-700">${slide.title}
+                <span class="text-3xl sm:text-4xl lg:text-6xl text-center xl:text-left font-semibold lg:font-bold text-emerald-400">${slide.titleSpan}</span></h1>
               </div>
-              <p class="text-sm text-center text-gray-700">${slide.subtitle}</p>
+              <p class="xl:max-w-8/10 text-sm sm:text-base md:text-lg xl:text-xl text-center xl:text-left text-gray-700">${slide.subtitle}</p>
+              <a href="#" class="px-4 py-2 lg:px-5 lg:py-3 w-fit mx-auto xl:m-0 rounded-xl text-base lg:text-2xl text-white text-center bg-emerald-400">Начать работу</a>
             </div>
           </div>
+        </div>
       `;
 
       let slideElement = document.querySelector('.slide');
