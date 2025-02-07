@@ -1,0 +1,14 @@
+mixin card(img, title, titleSpan, textBtn, ...subtitles)
+
+  .card.flex.flex-col.gap-8.px-4.py-10.bg-gray-900
+    .flex.items-center.justify-center.bg-white
+      img(src=img, alt='')
+    .flex.flex-col.items-center.justify-center.gap-5
+      .block.w-full
+        h2(class="text-2xl text-left font-semibold text-white")!=title
+        h2(class="text-2xl text-left font-semibold text-emerald-400")!=titleSpan
+
+      each subtitle in subtitles
+        p(class="w-full text-base text-left text-white")!=subtitle
+
+    a.px-4.py-2.mx-auto.mt-2.bg-white.rounded-xl.text-base.text-emerald-400.text-center=textBtn
