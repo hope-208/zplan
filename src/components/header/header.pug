@@ -1,4 +1,4 @@
-header.bg-gray-50.shadow-md.shadow-gray-200
+header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
   nav.mx-auto.flex.w-full.items-center.justify-between.p-4(class='lg:px-8 lg:gap-8 xl:max-w-7xl lg:max-w-5xl', aria-label='Global')
     .flex(class='lg:flex-1')
       a(href='/', class='-m-1.5 p-1.5')
@@ -40,7 +40,7 @@ header.bg-gray-50.shadow-md.shadow-gray-200
   // Mobile menu
   div(class='lg:hidden hidden mobile-menu', role='dialog', aria-modal='true', id="mobileMenu")
     .fixed.inset-0.z-10
-    .fixed.inset-y-0.right-0.z-10.w-full.h-screen.overflow-y-auto.bg-white(class='sm:max-w-sm sm:ring-1 sm:ring-gray-900/10')
+    .fixed.inset-y-0.right-0.z-10.w-full.overflow-y-auto.bg-white.scroll(class='sm:max-w-sm sm:ring-1 sm:ring-gray-900/10')
 
       .mx-auto.flex.w-full.items-center.justify-between.p-4.bg-gray-50.border-b.border-solid.border-gray-200
         a(href='/', class='-m-1.5 p-1.5')
@@ -61,7 +61,7 @@ header.bg-gray-50.shadow-md.shadow-gray-200
                 a.block.rounded-lg.p-4.font-semibold.text-gray-900(href='#', class='text-2xl hover:bg-gray-50') Контакты
           .py-8.flex.flex-col.gap-3.mt-auto
             a(href='#').px-4.py-2.rounded-xl.text-base.text-white.text-center.bg-emerald-400 1 месяц бесплатно
-            a.-mx-3.block.rounded-lg.px-3.text-base.text-center.underline.text-gray-900(href='mailto:support@zplan.ru', class='py-2.5 hover:focus:text-emerald-400') support@zplan.ru
+            a.block.rounded-lg.px-3.text-base.text-center.underline.text-gray-900(href='mailto:support@zplan.ru', class='hover:focus:text-emerald-400') support@zplan.ru
             .flex.items-center.justify-center.gap-3
               a.block(href='#')
                 span.sr-only Close menu
