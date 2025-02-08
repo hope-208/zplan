@@ -14,7 +14,7 @@ header.bg-gray-50.shadow-md.shadow-gray-200
 
     .flex(class='lg:hidden gap-3')
         a(href='#').px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white Вход
-        button.inline-flex.items-center.justify-center.rounded-md.text-gray-700(type='button', class='-m-2.5 p-2.5', id="btnMenuOpen")
+        button.inline-flex.items-center.justify-center.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5', id="btnMenuOpen")
           span.sr-only Open main menu
           svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
             path(stroke-linecap='round', stroke-linejoin='round', d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5')
@@ -47,7 +47,7 @@ header.bg-gray-50.shadow-md.shadow-gray-200
           img.object-cover.h-8.w-auto(src='./src/assets/img/logo.svg', alt='Логотип zplan.')
         .flex(class='lg:hidden gap-3')
           a(href='#').px-4.py-2.rounded-xl.text-base.text-center.text-gray-700.border.border-solid.border-gray-700.font-medium.bg-white Вход
-          button.rounded-md.text-gray-700(type='button', class='-m-2.5 p-2.5 button-close', id="btnMenuClose")
+          button.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5 button-close', id="btnMenuClose")
             span.sr-only Close menu
             svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
               path(stroke-linecap='round', stroke-linejoin='round', d='M6 18 18 6M6 6l12 12')

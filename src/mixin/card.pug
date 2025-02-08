@@ -1,6 +1,6 @@
 mixin card(img, title, titleSpan, textBtn, ...subtitles)
 
-  .card.flex.flex-col.gap-8.px-4.py-10.bg-gray-900
+  .card.flex.flex-col.gap-8.px-4.py-10.bg-gray-700
     .flex.items-center.justify-center.bg-white
       img.object-cover(src=img, alt='')
     .flex.flex-col.items-center.justify-center.gap-5
@@ -11,4 +11,4 @@ mixin card(img, title, titleSpan, textBtn, ...subtitles)
       each subtitle in subtitles
         p(class="w-full text-base text-left text-white")!=subtitle
 
-    a.px-4.py-2.mx-auto.mt-2.bg-white.rounded-xl.text-base.font-semibold.text-emerald-400.text-center=textBtn
+    a.px-4.py-2.mx-auto.mt-2.bg-white.rounded-xl.text-base.font-semibold.text-emerald-400.text-center.cursor-pointer=textBtn

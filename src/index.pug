@@ -17,7 +17,7 @@ main(class="container mx-auto")
 
   include ./mixin/card.pug
 
-  .flex.flex-col.m-0(class="cards")
+  .flex.flex-col.box-border(class="cards")
     +card('./src/assets/img/card1.svg',
       'Готовое решение для',
       'продажи запчастей',
@@ -43,7 +43,7 @@ main(class="container mx-auto")
     )
 
   .flex.flex-col.px-4.py-8
-    h3.font-bold.text-5xl.text--gray-900 Новости
+    h3.font-bold.text-5xl.text-gray-900 Новости
 
     include ./mixin/news-card.pug
     .flex.flex-col.py-4.news-cards.gap-8.py-8
@@ -56,9 +56,9 @@ main(class="container mx-auto")
       +newsCard('Lorem ipsum dolor sit amet consectetur.',
         '28.12.2024')
 
-    a.px-4.py-2.mx-auto.mt-2.mb-4.rounded-xl.border.border-gray-700.text-lg.font-semibold.text-gray-700.text-center Все новости
+    a.px-4.py-2.mx-auto.mt-2.mb-4.rounded-xl.border.border-gray-700.text-lg.font-semibold.text-gray-700.text-center.cursor-pointer Все новости
 
-  .flex.flex-col.px-4.py-8.form-container.gap-8
+  .flex.flex-col.p-4.form-container.gap-8
     .flex.items-center.justify-center.bg-gray-300
       img.w-full.h-full.object-cover.p-4(src="./src/assets/img/form-img.svg", alt="")
     .flex.flex-col
@@ -77,13 +77,60 @@ main(class="container mx-auto")
         button.px-4.py-2.mt-2.rounded-xl.bg-emerald-400.text-lg.font-semibold.text-white.text-center.cursor-pointer.button-submit(class="disabled:opacity-75 disabled:cursor-not-allowed", type="submit", for="formApplication", id="btnApplication") Оставить заявку
         .flex.flex-col
           p.text-base.text-center.text-gray-900.leading-none Нажимая кнопку «Оставить заявку» вы соглашаетесь на обработку
-          a.text-base.text-center.text-emerald-400.leading-none(href='#') персональных данных
+          a.text-base.text-center.text-emerald-400.leading-none(href='#', class="hover:underline") персональных данных
         .flex.items-center.justify-center
           p.pr-2.text-gray-900.leading-none.text-base Или напишите нам:
           .flex.items-center.justify-center.gap-1
             a.block(href='#')
-              span.sr-only Close menu
               img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
             a.block(href='#')
-              span.sr-only Close menu
-              img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип whatsapp.')
+              img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип telegram.')
+
+  .flex.flex-col.px-4.py-8.gap-5.bg-gray-700
+    .flex.flex-col.gap-4
+      .flex.flex-col.gap-4
+        a(href='#').px-4.py-2.rounded-xl.text-base.text-emerald-400.font-semibold.text-center.bg-white Вход
+        a(href='#').px-4.py-2.rounded-xl.text-base.text-white.font-semibold.text-center.bg-emerald-400 1 месяц бесплатно
+        .flex.flex-col.gap-1
+          .flex.items-center.justify-center.gap-4
+            a.block(href='#')
+              img.object-cover(src='./src/assets/img/rutube.svg', alt='Логотип rutube.')
+            a.block(href='#')
+              img.object-cover(src='./src/assets/img/youtube.svg', alt='Логотип youtube.')
+            a.block(href='#')
+              img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
+            a.block(href='#')
+              img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип telegram.')
+          a.text-base.text-center.underline.text-white(href='mailto:support@zplan.ru', class='hover:text-emerald-400 hover:underline') support@zplan.ru
+      .flex.flex-col.gap-4
+        p.text-2xl.uppercase.font-semibold.text-white О нас
+        .flex.flex-col
+          a.text-base.text-white(href='#', class="hover:underline") О компании
+          a.text-base.text-white(href='#', class="hover:underline") Новости
+      .flex.flex-col.gap-4
+        p.text-2xl.uppercase.font-semibold.text-white Помощь
+        .flex.flex-col
+          a.text-base.text-white(href='#', class="hover:underline") Техническая поддержка
+          a.text-base.text-white(href='#', class="hover:underline") Видео-уроки
+      .flex.flex-col.gap-4
+        p.text-2xl.uppercase.font-semibold.text-white Цены
+        .flex.flex-col
+          a.text-base.text-white(href='#', class="hover:underline") Тарифы
+      .flex.flex-col
+        p.text-2xl.uppercase.font-semibold.text-white.mb-5 Полезное
+        .flex.flex-col
+          a.text-base.text-white(href='#', class="hover:underline") Что такое программа для магазина автозапчастей?
+          a.text-base.text-white(href='#', class="hover:underline") CRM для автозапчастей
+          a.text-base.text-white(href='#', class="hover:underline") Программы склад автозапчастей
+        .flex.flex-col
+          a.text-base.text-white(href='#', class="hover:underline") Программа для проценки автозапчастей
+          a.text-base.text-white(href='#', class="hover:underline") Статистика цен на автозапчасти
+          a.text-base.text-white(href='#', class="hover:underline") Цена сайта автозапчастей
+      .flex.flex-col.gap-4
+        .flex.flex-col
+          a.text-base.text-white(href='#', class="hover:underline") Карта сайта
+          a.text-base.text-white(href='#', class="hover:underline") Политика конфиденциальности
+
+  .flex.flex-col.gap-2.p-4.bg-white
+    p.text-xs.text-gray-900 © zplan.ru, 2025
+    p.text-xs.text-gray-900 Предложения на сайте не являются публичной офертой и носят исключительно информационный характер.
