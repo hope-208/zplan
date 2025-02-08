@@ -2,7 +2,7 @@ mixin slide(img, title, titleSpan, subtitle)
 
   .slide
     .flex.flex-col.p-4.gap-4(class='lead-slide')
-      img(src=img, alt='')
+      img.object-cover(src=img, alt='')
       .block
         h1(class="text-3xl text-center font-semibold text-gray-700")=title
         h1(class="text-3xl text-center font-semibold text-emerald-400")=titleSpan

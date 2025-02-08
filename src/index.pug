@@ -43,7 +43,7 @@ main(class="container mx-auto")
     )
 
   .flex.flex-col.px-4.py-8
-    h3.font-bold.text-5xl Новости
+    h3.font-bold.text-5xl.text--gray-900 Новости
 
     include ./mixin/news-card.pug
     .flex.flex-col.py-4.news-cards.gap-8.py-8
@@ -57,3 +57,18 @@ main(class="container mx-auto")
         '28.12.2024')
 
     a.px-4.py-2.mx-auto.mt-2.mb-4.rounded-xl.border.border-gray-700.text-lg.font-semibold.text-gray-700.text-center Все новости
+
+  .flex.flex-col.px-4.py-8.form-container.gap-8
+    .flex.items-center.justify-center.bg-gray-300
+      img.w-full.h-full.object-cover.p-4(src="./src/assets/img/form-img.svg", alt="")
+    form.flex.flex-col.form(id="formApplication")
+      .block.w-fill
+        h3.text-2xl.text-center.font-semibold.text-gray-900 Начните работу с&nbsp;программой
+        span.text-2xl.font-semibold.text-emerald-400 Zplan
+      .flex.flex-col.py-2.gap-5
+        input.py-2.px-4.text-lg.rounded-md.border.border-gray-300.outline-0(class="hover:focus:focus-visible:border-emerald-400", type="text", placeholder="Имя", id="name", required="true")
+        input.py-2.px-4.text-lg.rounded-md.border.border-gray-300.outline-0(class="hover:focus:focus-visible:border-emerald-400", type="tel", placeholder="Телефон", id="phone", required="true")
+        input.py-2.px-4.text-lg.rounded-md.border.border-gray-300.outline-0(class="hover:focus:focus-visible:border-emerald-400", type="email", placeholder="Email", id="email", required="true")
+        textarea.py-2.px-4.text-lg.rounded-md.border.border-gray-300.outline-0(class="hover:focus:focus-visible:border-emerald-400",  placeholder="Сообщение", id="message", required="true")
+
+      button.px-4.py-2.mt-2.mb-4.rounded-xl.bg-emerald-400.text-lg.font-semibold.text-white.text-center.cursor-pointer(type="submit", for="formApplication") Оставить заявку
