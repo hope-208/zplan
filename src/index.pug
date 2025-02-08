@@ -1,10 +1,10 @@
 include ./components/header/header.pug
-main.container.mx-auto
-  .flex.lead.container.w-full.mx-auto.mt-20(class="lg:max-w-7xl  lg:px-4")
+main.container.w-full.max-w-full
+  .flex.lead.container.w-full.mx-auto.mt-20(class="lg:max-w-7xl lg:px-4")
 
   include ./mixin/advantage.pug
 
-  .flex.flex-col.py-8.px-4.gap-4(class="advantages sm:flex-row sm:justify-center sm:flex-wrap lg:flex-nowrap lg:max-w-7xl lg:mx-auto lg:gap-8")
+  .flex.flex-col.py-8.px-4.gap-4.mx-auto(class="advantages sm:flex-row sm:justify-center sm:flex-wrap lg:flex-nowrap lg:max-w-7xl lg:mx-auto lg:gap-8")
     +advantage('./src/assets/img/timer.svg',
     'Программа для магазинов автозапчастей',
     'Начните успешно торговать с&nbsp;нами всего за&nbsp;1&nbsp;час')
@@ -17,7 +17,7 @@ main.container.mx-auto
 
   include ./mixin/card.pug
 
-  .flex.flex-col.box-border(class="cards")
+  .flex.flex-col.box-border.mx-auto.bg-gray-700(class="cards")
     +card('./src/assets/img/card1.svg',
       'Готовое решение для',
       'продажи запчастей',
@@ -26,23 +26,23 @@ main.container.mx-auto
         'В&nbsp;неё уже включен мощный набор инструментов для успешной продажи автозапчастей. Вам не&nbsp;нужно тратить время и&nbsp;средства на&nbsp;разработку своей системы, продумывать и&nbsp;создавать собственную программу по&nbsp;продаже автозапчастей.',
         'Мы продумываем и&nbsp;разрабатываем Zplan для вашей комфортной и&nbsp;успешной работы на&nbsp;рынке автозапчастей.',
         'Продавайте запчасти правильно и&nbsp;с&nbsp;правильным функционалом, вместе с&nbsp;платформой Zplan.'
-    )
+    )(class="lg:flex-row")
     +card('./src/assets/img/card2.svg',
       'Готовый',
       'интернет-магазин автозапчастей',
       'Попробовать все инструменты',
         'Платформа по&nbsp;продаже автозапчастей Zplan включает в&nbsp;себя CMS-систему и&nbsp;полноценный интернет-магазин автозапчастей.',
         'В&nbsp;распоряжении Zplan находится гибкий рабочий стол, который позволяет: <br />— работать с&nbsp;поставщиками,<br />— формировать цены,<br />— вести клиентов.'
-    )
+    )(class="lg:flex-row-reverse")
     +card('./src/assets/img/card3.svg',
       'Готовая',
       'CRM для автозапчастей',
       'Начать работу',
         'Zplan включает в&nbsp;себя набор функций по работе с&nbsp;поставщиками и&nbsp;его складами, которые позволяют с&nbsp;большой скоростью найти нужное предложение по&nbsp;покупки автозапчастей. А&nbsp;также вести мониторинг автозапчастей — проценку.',
         'Благодаря Zplan Вы сможете быстро выгрузить остатки запчастей и&nbsp;немедленно начать их&nbsp;продажу.'
-    )
+    )(class="lg:flex-row")
 
-  .flex.flex-col.px-4.py-8
+  .flex.flex-col.px-4.py-8.mx-auto
     h3.font-bold.text-5xl.text-gray-900 Новости
 
     include ./mixin/news-card.pug
@@ -58,7 +58,7 @@ main.container.mx-auto
 
     a.px-4.py-2.mx-auto.mt-2.mb-4.rounded-xl.border.border-gray-700.text-lg.font-semibold.text-gray-700.text-center.cursor-pointer Все новости
 
-  .flex.flex-col.p-4.form-container.gap-8
+  .flex.flex-col.p-4.form-container.gap-8.mx-auto
     .flex.items-center.justify-center.bg-gray-300
       img.w-full.h-full.object-cover.p-4(src="./src/assets/img/form-img.svg", alt="")
     .flex.flex-col
@@ -86,7 +86,7 @@ main.container.mx-auto
             a.block(href='#')
               img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип telegram.')
 
-  .flex.flex-col.px-4.py-8.gap-5.bg-gray-700
+  .flex.flex-col.px-4.py-8.gap-5.bg-gray-700.mx-auto
     .flex.flex-col.gap-4
       .flex.flex-col.gap-4
         a(href='#').px-4.py-2.rounded-xl.text-base.text-emerald-400.font-semibold.text-center.bg-white Вход
@@ -131,6 +131,6 @@ main.container.mx-auto
           a.text-base.text-white(href='#', class="hover:underline") Карта сайта
           a.text-base.text-white(href='#', class="hover:underline") Политика конфиденциальности
 
-  .flex.flex-col.gap-2.p-4.bg-white
+  .flex.flex-col.gap-2.p-4.bg-white.mx-auto
     p.text-xs.text-gray-900 © zplan.ru, 2025
     p.text-xs.text-gray-900 Предложения на сайте не являются публичной офертой и носят исключительно информационный характер.

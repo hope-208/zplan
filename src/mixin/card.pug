@@ -1,14 +1,14 @@
 mixin card(img, title, titleSpan, textBtn, ...subtitles)
 
-  .card.flex.flex-col.gap-8.px-4.py-10.bg-gray-700
-    .flex.items-center.justify-center.bg-white
+  .card.flex.flex-col.gap-8.px-4.py-10.mx-auto(class="sm:p-8 lg:max-w-7xl lg:px-4 lg:py-15 lg:justify-between lg:gap-8", class!=attributes.class)
+    .flex.items-center.justify-center.w-full.bg-white(class="lg:max-w-1/2 lg:py-4")
       img.object-cover(src=img, alt='')
-    .flex.flex-col.items-center.justify-center.gap-5
+    .flex.flex-col.items-center.justify-center.w-full.gap-5(class="lg:max-w-1/2 lg:py-4")
       .block.w-full
-        h2(class="text-2xl text-left font-semibold text-white")!=title
-        h2(class="text-2xl text-left font-semibold text-emerald-400")!=titleSpan
+        h2.text-2xl.text-left.font-semibold.text-white(class=" md:text-3xl lg:text-4xl")!=title
+        h2.text-2xl.text-left.font-semibold.text-emerald-400(class="md:text-3xl lg:text-4xl")!=titleSpan
 
       each subtitle in subtitles
-        p(class="w-full text-base text-left text-white")!=subtitle
+        p.w-full.text-base.text-left.text-white(class="md:text-base lg:text-lg")!=subtitle
 
-    a.px-4.py-2.mx-auto.mt-2.bg-white.rounded-xl.text-base.font-semibold.text-emerald-400.text-center.cursor-pointer=textBtn
+      a.px-4.py-2.mx-auto.mt-2.bg-white.rounded-xl.text-base.font-semibold.text-emerald-400.text-center.cursor-pointer(class="lg:mx-0 lg:self-start lg:text-lg")=textBtn
