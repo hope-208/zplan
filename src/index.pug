@@ -4,7 +4,7 @@ main.container.w-full.max-w-full
 
   include ./mixin/advantage.pug
 
-  .flex.flex-col.py-8.px-4.gap-4.mx-auto(class="advantages sm:flex-row sm:justify-center sm:flex-wrap lg:flex-nowrap lg:max-w-7xl lg:mx-auto lg:gap-8")
+  .flex.flex-col.py-8.px-4.gap-4.mx-auto(class="advantages sm:flex-row sm:justify-center sm:flex-wrap lg:px-8 lg:flex-nowrap lg:max-w-7xl lg:mx-auto lg:gap-8")
     +advantage('./src/assets/img/timer.svg',
     'Программа для магазинов автозапчастей',
     'Начните успешно торговать с&nbsp;нами всего за&nbsp;1&nbsp;час')
@@ -42,11 +42,11 @@ main.container.w-full.max-w-full
         'Благодаря Zplan Вы сможете быстро выгрузить остатки запчастей и&nbsp;немедленно начать их&nbsp;продажу.'
     )(class="lg:flex-row")
 
-  .flex.flex-col.px-4.py-8.mx-auto
-    h3.font-bold.text-5xl.text-gray-900 Новости
+  .flex.flex-col.px-4.py-8.mx-auto(class="md:px-8 lg:max-w-7xl")
+    h3.font-bold.text-5xl.text-gray-900(class="lg:max-w-7xl") Новости
 
     include ./mixin/news-card.pug
-    .flex.flex-col.py-4.news-cards.gap-8.py-8
+    .flex.flex-col.py-4.news-cards.gap-8.py-8(class="md:flex-row md:flex-wrap md:justify-center")
       +newsCard('Lorem ipsum dolor sit amet consectetur.',
         '28.12.2024')
       +newsCard('Lorem ipsum dolor sit amet consectetur.',
