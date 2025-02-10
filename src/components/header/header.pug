@@ -1,4 +1,4 @@
-header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
+header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0.z-10
   nav.mx-auto.flex.w-full.items-center.justify-between.p-4(class='sm:px-8 lg:gap-8 lg:max-w-7xl', aria-label='Global')
     .flex(class='lg:flex-1')
       a(href='/', class='-m-1.5 p-1.5')
@@ -13,7 +13,7 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
         img.object-cover(src='./assets/img/telegram.svg', alt='Логотип whatsapp.')
 
     .flex(class='lg:hidden gap-3')
-        a.px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white(href='https://zplan.ru/panel/login') Вход
+        a.px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white.box-border(href="https://zplan.ru/panel/login", class="hover:bg-emerald-400 hover:text-white hover:border-emerald-400") Вход
         button.inline-flex.items-center.justify-center.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5', id="btnMenuOpen")
           span.sr-only Open main menu
           svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
@@ -26,8 +26,8 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
       a.block.font-semibold.text-gray-900(href='#', class='text-base hover:focus:text-emerald-400 hover:focus:underline') Контакты
 
     .hidden(class='lg:flex lg:flex-1 lg:justify-start lg:items-center lg:gap-5')
-      a.px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white(href="https://zplan.ru/panel/login") Вход
-      a.px-4.py-2.rounded-xl.text-base.text-white.text-center.text-base.bg-gray-700(href='#', class="w-[171px] hover:focus:text-emerald-400") 1 месяц бесплатно
+      a.px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.font-medium.bg-white(href="https://zplan.ru/panel/login", class="hover:bg-emerald-400 hover:text-white hover:border-emerald-400") Вход
+      a.px-4.py-2.rounded-xl.text-base.text-white.text-center.text-base.bg-gray-700(href='#application', class="w-[171px] hover:opacity-80") 1 месяц бесплатно
 
     .hidden.items-center.justify-end.gap-2(class="lg:flex ")
       a.block(href='#')
@@ -46,7 +46,7 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
         a(href='/', class='-m-1.5 p-1.5')
           img.object-cover.h-8.w-auto(src='./assets/img/logo.svg', alt='Логотип zplan.')
         .flex(class='lg:hidden gap-3')
-          a.px-4.py-2.rounded-xl.text-base.text-center.text-gray-700.border.border-solid.border-gray-700.font-medium.bg-white(href='https://zplan.ru/panel/login') Вход
+          a.px-4.py-2.rounded-xl.text-base.text-center.text-gray-700.border.border-solid.border-gray-700.font-medium.bg-white(href='https://zplan.ru/panel/login', class="hover:bg-emerald-400 hover:text-white hover:border-emerald-400") Вход
           button.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5 button-close', id="btnMenuClose")
             span.sr-only Close menu
             svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
@@ -60,7 +60,7 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
                 a.block.rounded-lg.p-4.font-semibold.text-gray-900(href='#', class='text-2xl hover:bg-gray-50') Цены
                 a.block.rounded-lg.p-4.font-semibold.text-gray-900(href='#', class='text-2xl hover:bg-gray-50') Контакты
           .py-8.flex.flex-col.gap-3.mt-auto
-            a(href='#').px-4.py-2.rounded-xl.text-base.text-white.text-center.bg-emerald-400 1 месяц бесплатно
+            a.px-4.py-2.rounded-xl.text-base.text-white.text-center.bg-emerald-400(href='#application', class="hover:opacity-80") 1 месяц бесплатно
             a.block.rounded-lg.px-3.text-base.text-center.underline.text-gray-900(href='mailto:support@zplan.ru', class='hover:focus:text-emerald-400') support@zplan.ru
             .flex.items-center.justify-center.gap-3
               a.block(href='#')

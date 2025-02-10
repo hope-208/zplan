@@ -69,3 +69,24 @@ btnSubmitApplication.addEventListener('click', () => {
   applicationFormValidation.resetErrors();
   applicationFormValidation.toggleButtonState();
 });
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (
+      document.querySelector('.mobile-menu').classList.contains('hidden') ==
+      false
+    ) {
+      mobileMenuPopup.close();
+    }
+    const target = document.querySelector(anchor.getAttribute('href'));
+
+    const targetPosition = target.offsetTop - 75;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    });
+  });
+});

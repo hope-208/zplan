@@ -19,7 +19,7 @@ export default class Slider {
                 <span class="text-3xl sm:text-4xl lg:text-6xl text-center xl:text-left font-semibold lg:font-bold text-emerald-400">${slide.titleSpan}</span></h1>
               </div>
               <p class="xl:max-w-8/10 text-sm sm:text-base md:text-lg xl:text-xl text-center xl:text-left text-gray-700">${slide.subtitle}</p>
-              <a href="#" class="px-4 py-2 lg:px-5 lg:py-3 w-fit mx-auto xl:m-0 rounded-xl text-base lg:text-2xl text-white text-center bg-emerald-400">Начать работу</a>
+              <a href="#application" class="px-4 py-2 lg:px-5 lg:py-3 w-fit mx-auto xl:m-0 rounded-xl text-base lg:text-2xl text-white text-center bg-emerald-400">Начать работу</a>
             </div>
           </div>
         </div>
