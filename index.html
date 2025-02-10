@@ -1,13 +1,226 @@
 <!doctype html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link name="apple-mobile-web-app-title" content="Zplan" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" crossorigin href="/index.css" />
+    <title>Zplan</title>
+    <script type="module" crossorigin src="/assets/index-CkG5j0o6.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CuZ7Rxpl.css">
   </head>
-  <body class="h-full">
-    <pug src="./src/index.pug" />
-    <script type="module" src="./src/main.js"></script>
+  <body class="h-full scroll">
+    
+<header class="bg-slate-50 shadow-md shadow-gray-50 max-w-full w-full fixed top-0">
+  <nav class="mx-auto flex w-full items-center justify-between p-4 sm:px-8 lg:gap-8 lg:max-w-7xl" aria-label="Global">
+    <div class="flex lg:flex-1"><a class="-m-1.5 p-1.5" href="/"><img class="object-cover h-8 w-auto" src="./src/assets/img/logo.svg" alt="Логотип zplan."/></a></div>
+    <div class="hidden items-center justify-end gap-2 lg:hidden md:flex"><a class="block" href="#"><span class="sr-only">Close menu</span><img class="object-cover" src="./src/assets/img/whatsapp.svg" alt="Логотип whatsapp."/></a><a class="block" href="#"><span class="sr-only">Close menu</span><img class="object-cover" src="./src/assets/img/telegram.svg" alt="Логотип whatsapp."/></a></div>
+    <div class="flex lg:hidden gap-3"><a class="px-4 py-2 rounded-xl text-base text-gray-700 text-center border border-solid border-gray-700 font-medium bg-white" href="#">Вход</a>
+      <button class="inline-flex items-center justify-center rounded-md text-gray-700 cursor-pointer -m-2.5 p-2.5" type="button" id="btnMenuOpen"><span class="sr-only">Open main menu</span>
+        <svg class="size-6" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:flex lg:items-center lg:gap-7 "><a class="block font-semibold text-gray-900 text-base hover:focus:text-emerald-400 hover:focus:underline" href="#">О нас</a><a class="block font-semibold text-gray-900 text-base hover:focus:text-emerald-400 hover:focus:underline" href="#">Возможности</a><a class="block font-semibold text-gray-900 text-base hover:focus:text-emerald-400 hover:focus:underline" href="#">Цены</a><a class="block font-semibold text-gray-900 text-base hover:focus:text-emerald-400 hover:focus:underline" href="#">Контакты</a></div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-start lg:items-center lg:gap-5"><a class="px-4 py-2 rounded-xl text-base text-gray-700 text-center border border-solid border-gray-700 font-medium bg-white" href="#">Вход</a><a class="px-4 py-2 rounded-xl text-base text-white text-center text-base bg-gray-700 w-[171px] hover:focus:text-emerald-400" href="#">1 месяц бесплатно</a></div>
+    <div class="hidden items-center justify-end gap-2 lg:flex "><a class="block" href="#"><span class="sr-only">Close menu</span><img class="object-cover" src="./src/assets/img/whatsapp.svg" alt="Логотип whatsapp."/></a><a class="block" href="#"><span class="sr-only">Close menu</span><img class="object-cover" src="./src/assets/img/telegram.svg" alt="Логотип whatsapp."/></a></div>
+  </nav>
+  <!-- Mobile menu-->
+  <div class="lg:hidden hidden mobile-menu" role="dialog" aria-modal="true" id="mobileMenu">
+    <div class="fixed inset-0 z-10"></div>
+    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white scroll sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="mx-auto flex w-full items-center justify-between p-4 bg-gray-50 border-b border-solid border-gray-200"><a class="-m-1.5 p-1.5" href="/"><img class="object-cover h-8 w-auto" src="./src/assets/img/logo.svg" alt="Логотип zplan."/></a>
+        <div class="flex lg:hidden gap-3"><a class="px-4 py-2 rounded-xl text-base text-center text-gray-700 border border-solid border-gray-700 font-medium bg-white" href="#">Вход</a>
+          <button class="rounded-md text-gray-700 cursor-pointer -m-2.5 p-2.5 button-close" type="button" id="btnMenuClose"><span class="sr-only">Close menu</span>
+            <svg class="size-6" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="mt-4 p-4 flow-root">
+        <div class="-my-6 divide-y flex flex-col divide-gray-500/10">
+          <div class="space-y-2">
+            <div class="-mx-3 mb-8"><a class="block rounded-lg p-4 font-semibold text-gray-900 text-2xl hover:bg-gray-50" href="#">О нас</a><a class="block rounded-lg p-4 font-semibold text-gray-900 text-2xl hover:bg-gray-50" href="#">Возможности</a><a class="block rounded-lg p-4 font-semibold text-gray-900 text-2xl hover:bg-gray-50" href="#">Цены</a><a class="block rounded-lg p-4 font-semibold text-gray-900 text-2xl hover:bg-gray-50" href="#">Контакты</a></div>
+          </div>
+          <div class="py-8 flex flex-col gap-3 mt-auto"><a class="px-4 py-2 rounded-xl text-base text-white text-center bg-emerald-400" href="#">1 месяц бесплатно</a><a class="block rounded-lg px-3 text-base text-center underline text-gray-900 hover:focus:text-emerald-400" href="mailto:support@zplan.ru">support@zplan.ru</a>
+            <div class="flex items-center justify-center gap-3"><a class="block" href="#"><span class="sr-only">Close menu</span><img class="object-cover" src="./src/assets/img/whatsapp.svg" alt="Логотип whatsapp."/></a><a class="block" href="#"><span class="sr-only">Close menu</span><img class="object-cover" src="./src/assets/img/telegram.svg" alt="Логотип whatsapp."/></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<script type="module" src="../src/components/Popup.js" defer="defer"></script>
+<main class="container w-full max-w-full">
+  <div class="flex lead container w-full mx-auto mt-20 lg:max-w-7xl lg:px-4"></div>
+  <div class="flex flex-col py-8 px-4 gap-4 mx-auto advantages sm:flex-row sm:justify-center sm:flex-wrap lg:px-8 lg:flex-nowrap lg:max-w-7xl lg:mx-auto lg:gap-8">
+      <div class="advantage sm:w-fill sm:max-w-1/2 lg:max-w-1/3 lg:w-full">
+        <div class="flex items-center justify-center flex-nowrap w-full max-w-full p-4 gap-4 rounded-xl border border-solid border-gray-100 bg-white shadow-lg advantage-item"><img class="object-cover max-w-[50px]" src="./src/assets/img/timer.svg" alt=""/>
+          <div class="flex flex-col gap-2 max-w-[220px]">
+            <h4 class="text-left text-sm font-semibold uppercase text-gray-700">Программа для магазинов автозапчастей</h4>
+            <p class="text-left text-xs text-gray-700">Начните успешно торговать с&nbsp;нами всего за&nbsp;1&nbsp;час</p>
+          </div>
+        </div>
+      </div>
+      <div class="advantage sm:w-fill sm:max-w-1/2 lg:max-w-1/3 lg:w-full">
+        <div class="flex items-center justify-center flex-nowrap w-full max-w-full p-4 gap-4 rounded-xl border border-solid border-gray-100 bg-white shadow-lg advantage-item"><img class="object-cover max-w-[50px]" src="./src/assets/img/check.svg" alt=""/>
+          <div class="flex flex-col gap-2 max-w-[220px]">
+            <h4 class="text-left text-sm font-semibold uppercase text-gray-700">Профессиональная платформа</h4>
+            <p class="text-left text-xs text-gray-700">Более 15&nbsp;лет в&nbsp;разработке систем по&nbsp;продаже запчастей</p>
+          </div>
+        </div>
+      </div>
+      <div class="advantage sm:w-fill sm:max-w-1/2 lg:max-w-1/3 lg:w-full">
+        <div class="flex items-center justify-center flex-nowrap w-full max-w-full p-4 gap-4 rounded-xl border border-solid border-gray-100 bg-white shadow-lg advantage-item"><img class="object-cover max-w-[50px]" src="./src/assets/img/moneybox.svg" alt=""/>
+          <div class="flex flex-col gap-2 max-w-[220px]">
+            <h4 class="text-left text-sm font-semibold uppercase text-gray-700">Всего 5&nbsp;500 рублей в&nbsp;месяц</h4>
+            <p class="text-left text-xs text-gray-700">Мы предоставляем максимальный функционал за&nbsp;минимальные деньги на&nbsp;рынке!</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="flex flex-col box-border mx-auto bg-gray-700 cards">
+      <div class="card flex flex-col gap-8 px-4 py-10 mx-auto sm:p-8 lg:max-w-7xl lg:px-8 lg:py-15 lg:justify-between lg:gap-8 lg:flex-row">
+        <div class="flex items-center justify-center w-full bg-white lg:max-w-1/2 lg:py-4"><img class="object-cover" src="./src/assets/img/card1.svg" alt=""/></div>
+        <div class="flex flex-col items-center justify-center w-full gap-5 lg:max-w-1/2 lg:py-4">
+          <div class="block w-full">
+            <h2 class="text-2xl text-left font-semibold text-white  md:text-3xl lg:text-4xl">Готовое решение для</h2>
+            <h2 class="text-2xl text-left font-semibold text-emerald-400 md:text-3xl lg:text-4xl">продажи запчастей</h2>
+          </div>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">Начните продавать прямо сейчас, используя программу для автозапчастей от&nbsp;Zplan.</p>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">В&nbsp;неё уже включен мощный набор инструментов для успешной продажи автозапчастей. Вам не&nbsp;нужно тратить время и&nbsp;средства на&nbsp;разработку своей системы, продумывать и&nbsp;создавать собственную программу по&nbsp;продаже автозапчастей.</p>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">Мы продумываем и&nbsp;разрабатываем Zplan для вашей комфортной и&nbsp;успешной работы на&nbsp;рынке автозапчастей.</p>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">Продавайте запчасти правильно и&nbsp;с&nbsp;правильным функционалом, вместе с&nbsp;платформой Zplan.</p><a class="px-4 py-2 mx-auto mt-2 bg-white rounded-xl text-base font-semibold text-emerald-400 text-center cursor-pointer lg:mx-0 lg:self-start lg:text-lg">Начать бесплатно</a>
+        </div>
+      </div>
+      <div class="card flex flex-col gap-8 px-4 py-10 mx-auto sm:p-8 lg:max-w-7xl lg:px-8 lg:py-15 lg:justify-between lg:gap-8 lg:flex-row-reverse">
+        <div class="flex items-center justify-center w-full bg-white lg:max-w-1/2 lg:py-4"><img class="object-cover" src="./src/assets/img/card2.svg" alt=""/></div>
+        <div class="flex flex-col items-center justify-center w-full gap-5 lg:max-w-1/2 lg:py-4">
+          <div class="block w-full">
+            <h2 class="text-2xl text-left font-semibold text-white  md:text-3xl lg:text-4xl">Готовый</h2>
+            <h2 class="text-2xl text-left font-semibold text-emerald-400 md:text-3xl lg:text-4xl">интернет-магазин автозапчастей</h2>
+          </div>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">Платформа по&nbsp;продаже автозапчастей Zplan включает в&nbsp;себя CMS-систему и&nbsp;полноценный интернет-магазин автозапчастей.</p>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">В&nbsp;распоряжении Zplan находится гибкий рабочий стол, который позволяет: <br />— работать с&nbsp;поставщиками,<br />— формировать цены,<br />— вести клиентов.</p><a class="px-4 py-2 mx-auto mt-2 bg-white rounded-xl text-base font-semibold text-emerald-400 text-center cursor-pointer lg:mx-0 lg:self-start lg:text-lg">Попробовать все инструменты</a>
+        </div>
+      </div>
+      <div class="card flex flex-col gap-8 px-4 py-10 mx-auto sm:p-8 lg:max-w-7xl lg:px-8 lg:py-15 lg:justify-between lg:gap-8 lg:flex-row">
+        <div class="flex items-center justify-center w-full bg-white lg:max-w-1/2 lg:py-4"><img class="object-cover" src="./src/assets/img/card3.svg" alt=""/></div>
+        <div class="flex flex-col items-center justify-center w-full gap-5 lg:max-w-1/2 lg:py-4">
+          <div class="block w-full">
+            <h2 class="text-2xl text-left font-semibold text-white  md:text-3xl lg:text-4xl">Готовая</h2>
+            <h2 class="text-2xl text-left font-semibold text-emerald-400 md:text-3xl lg:text-4xl">CRM для автозапчастей</h2>
+          </div>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">Zplan включает в&nbsp;себя набор функций по работе с&nbsp;поставщиками и&nbsp;его складами, которые позволяют с&nbsp;большой скоростью найти нужное предложение по&nbsp;покупки автозапчастей. А&nbsp;также вести мониторинг автозапчастей — проценку.</p>
+          <p class="w-full text-base text-left text-white md:text-base lg:text-lg">Благодаря Zplan Вы сможете быстро выгрузить остатки запчастей и&nbsp;немедленно начать их&nbsp;продажу.</p><a class="px-4 py-2 mx-auto mt-2 bg-white rounded-xl text-base font-semibold text-emerald-400 text-center cursor-pointer lg:mx-0 lg:self-start lg:text-lg">Начать работу</a>
+        </div>
+      </div>
+  </div>
+  <div class="flex flex-col px-4 py-8 mx-auto sm:px-8 lg:max-w-7xl">
+    <h3 class="font-bold text-5xl text-gray-900 lg:max-w-7xl">Новости</h3>
+    <div class="flex flex-col py-4 news-cards gap-8 py-8 md:grid md:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap">
+          <div class="newsCard w-full p-4 gap-4 rounded-xl border border-solid border-gray-100 bg-white shadow-lg md:px-8 lg:px-4 ">
+            <div class="flex flex-col gap-2">
+              <h5 class="text-left text-lg font-semibold text-gray-900">Lorem ipsum dolor sit amet consectetur.</h5><a class="text-left text-lg font-bold text-gray-900 cursor-pointer hover:underline">Подробнее ></a>
+              <p class="text-right text-xs">28.12.2024</p>
+            </div>
+          </div>
+          <div class="newsCard w-full p-4 gap-4 rounded-xl border border-solid border-gray-100 bg-white shadow-lg md:px-8 lg:px-4 ">
+            <div class="flex flex-col gap-2">
+              <h5 class="text-left text-lg font-semibold text-gray-900">Lorem ipsum dolor sit amet consectetur.</h5><a class="text-left text-lg font-bold text-gray-900 cursor-pointer hover:underline">Подробнее ></a>
+              <p class="text-right text-xs">28.12.2024</p>
+            </div>
+          </div>
+          <div class="newsCard w-full p-4 gap-4 rounded-xl border border-solid border-gray-100 bg-white shadow-lg md:px-8 lg:px-4 ">
+            <div class="flex flex-col gap-2">
+              <h5 class="text-left text-lg font-semibold text-gray-900">Lorem ipsum dolor sit amet consectetur.</h5><a class="text-left text-lg font-bold text-gray-900 cursor-pointer hover:underline">Подробнее ></a>
+              <p class="text-right text-xs">28.12.2024</p>
+            </div>
+          </div>
+          <div class="newsCard w-full p-4 gap-4 rounded-xl border border-solid border-gray-100 bg-white shadow-lg md:px-8 lg:px-4 ">
+            <div class="flex flex-col gap-2">
+              <h5 class="text-left text-lg font-semibold text-gray-900">Lorem ipsum dolor sit amet consectetur.</h5><a class="text-left text-lg font-bold text-gray-900 cursor-pointer hover:underline">Подробнее ></a>
+              <p class="text-right text-xs">28.12.2024</p>
+            </div>
+          </div>
+    </div><a class="px-4 py-2 mx-auto mt-2 mb-4 rounded-xl border border-gray-700 text-lg font-semibold text-gray-700 text-center cursor-pointer">Все новости</a>
+  </div>
+  <div class="flex flex-col px-4 py-8 form-container gap-8 mx-auto sm:px-8 lg:flex-row-reverse lg:max-w-7xl lg:py-10">
+    <div class="flex items-center justify-center w-full lg:max-w-1/2"><img class="w-full object-cover p-4 bg-gray-300" src="./src/assets/img/form-img.svg" alt=""/></div>
+    <div class="flex flex-col gap-5 mx-auto w-full sm:max-w-sm lg:max-w-1/2">
+      <div class="block mx-auto sm:max-w-8/10">
+        <h3 class="text-2xl text-center font-semibold text-gray-900 leading-none sm:text-3xl md:text-4xl">Начните работу с&nbsp;программой</h3>
+        <h3 class="text-2xl text-center font-semibold text-emerald-400 leading-none sm:text-3xl md:text-4xl">Zplan</h3>
+      </div>
+      <form class="flex flex-col gap-5 form" id="formApplication" name="formApplication" novalidate="novalidate">
+        <div class="flex flex-col py-2 gap-5">
+          <input class="py-2 px-4 text-base rounded-md border border-gray-300 outline-0 form__input caret-emerald-400 hover:focus:focus-visible:border-emerald-400 sm:text-lg" type="text" minLenght="2" placeholder="Имя" id="name" required="true"/><span class="hidden error name-error text-red-500 text-sm"></span>
+          <input class="py-2 px-4 text-base rounded-md border border-gray-300 outline-0 form__input caret-emerald-400 hover:focus:focus-visible:border-emerald-400 sm:text-lg" type="tel" minLenght="5" placeholder="Телефон" id="phone" required="true"/><span class="hidden error phone-error text-red-500 text-sm"></span>
+          <input class="py-2 px-4 text-base rounded-md border border-gray-300 outline-0 form__input caret-emerald-400 hover:focus:focus-visible:border-emerald-400 sm:text-lg" type="email" minLenght="8" placeholder="Email" id="email" required="true"/><span class="hidden error email-error text-red-500 text-sm"></span>
+          <textarea class="py-2 px-4 text-base rounded-md border border-gray-300 outline-0 form__input caret-emerald-400 hover:focus:focus-visible:border-emerald-400 sm:text-lg" placeholder="Сообщение" id="message" rows="3"></textarea>
+        </div>
+        <button class="px-4 py-2 mt-2 rounded-xl bg-emerald-400 text-lg font-semibold text-white text-center cursor-pointer button-submit z-1 disabled:opacity-75 disabled:cursor-not-allowed sm:text-2xl sm:py-3" type="submit" for="formApplication" id="btnApplication">Оставить заявку</button>
+        <div class="flex flex-col mx-auto max-w-8/10">
+          <p class="text-base text-center text-gray-900 leading-none">Нажимая кнопку «Оставить заявку» вы&nbsp;соглашаетесь на&nbsp;обработку</p><a class="text-base text-center text-emerald-400 leading-none hover:underline" href="#">персональных данных</a>
+        </div>
+        <div class="flex items-center justify-center">
+          <p class="pr-2 text-gray-900 leading-none text-base">Или напишите нам:</p>
+          <div class="flex items-center justify-center gap-1"><a class="block" href="#"><img class="object-cover" src="./src/assets/img/whatsapp.svg" alt="Логотип whatsapp."/></a><a class="block" href="#"><img class="object-cover" src="./src/assets/img/telegram.svg" alt="Логотип telegram."/></a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="flex flex-col px-4 py-8 gap-5 bg-gray-700 mx-auto sm:px-8 md:py-10">
+    <div class="flex flex-col gap-4 w-full mx-auto lg:max-w-7xl xl:px-8">
+      <div class="flex flex-col gap-4 lg:flex-row-reverse lg:justify-between">
+        <div class="flex flex-col gap-4"><a class="px-4 py-2 rounded-xl text-base text-emerald-400 font-semibold text-center bg-white sm:text-lg sm:py-3" href="#">Вход</a><a class="px-4 py-2 rounded-xl text-base text-white font-semibold text-center bg-emerald-400 sm:text-lg sm:py-3" href="#">1&nbsp;месяц бесплатно</a>
+          <div class="flex flex-col justify-center gap-1 sm:flex-row sm:gap-10">
+            <div class="flex items-center justify-center gap-4 sm:flex-row sm:gap-5"><a class="block" href="#"><img class="object-cover" src="./src/assets/img/rutube.svg" alt="Логотип rutube."/></a><a class="block" href="#"><img class="object-cover" src="./src/assets/img/youtube.svg" alt="Логотип youtube."/></a><a class="block" href="#"><img class="object-cover" src="./src/assets/img/whatsapp.svg" alt="Логотип whatsapp."/></a><a class="block" href="#"><img class="object-cover" src="./src/assets/img/telegram.svg" alt="Логотип telegram."/></a></div><a class="text-base text-center underline text-white hover:text-emerald-400 hover:underline" href="mailto:support@zplan.ru">support@zplan.ru</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="text-2xl uppercase font-semibold text-white sm:text-3xl">О&nbsp;нас</p>
+          <div class="flex flex-col"><a class="text-base text-white hover:underline" href="#">О&nbsp;компании</a><a class="text-base text-white hover:underline" href="#">Новости</a></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="text-2xl uppercase font-semibold text-white sm:text-3xl">Помощь</p>
+          <div class="flex flex-col"><a class="text-base text-white hover:underline" href="#">Техническая поддержка</a><a class="text-base text-white hover:underline" href="#">Видео-уроки</a></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="text-2xl uppercase font-semibold text-white sm:text-3xl">Цены</p>
+          <div class="flex flex-col"><a class="text-base text-white hover:underline" href="#">Тарифы</a></div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 lg:gap-9">
+        <div class="flex flex-col">
+          <p class="text-2xl uppercase font-semibold text-white mb-5 sm:text-3xl lg:flex-row">Полезное</p>
+          <div class="flex flex-col lg:flex-row lg:justify-between">
+            <div class="flex flex-col lg:max-w-1/2 lg:w-full"><a class="text-base text-white hover:underline" href="#">Что такое программа для магазина автозапчастей?</a><a class="text-base text-white hover:underline" href="#">CRM для автозапчастей</a><a class="text-base text-white hover:underline" href="#">Программы склад автозапчастей</a></div>
+            <div class="flex flex-col lg:max-w-1/2 lg:w-full"><a class="text-base text-white hover:underline" href="#">Программа для проценки автозапчастей</a><a class="text-base text-white hover:underline" href="#">Статистика цен на&nbsp;автозапчасти</a><a class="text-base text-white hover:underline" href="#">Цена сайта автозапчастей</a></div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col"><a class="text-base text-white hover:underline" href="#">Карта сайта</a><a class="text-base text-white hover:underline" href="#">Политика конфиденциальности</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2 p-4 bg-white mx-auto sm:p-8 lg:gap-10 lg:flex-row  lg:max-w-7xl xl:gap-16">
+    <div class="hidden lg:block lg:max-w-[180px]"><a href="/"><img class="object-cover h-8 w-auto" src="./src/assets/img/logo.svg" alt="Логотип zplan."/></a></div>
+    <div class="flex flex-col gap-3 lg:flex-1">
+      <p class="text-xs text-gray-900 block sm:text-sm">©&nbsp;zplan.ru, 2025</p>
+      <p class="text-xs text-gray-900 block sm:text-sm">Предложения на&nbsp;сайте не&nbsp;являются публичной офертой и&nbsp;носят исключительно информационный характер.</p>
+    </div>
+  </div>
+</main>
   </body>
 </html>
