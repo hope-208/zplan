@@ -15,14 +15,14 @@ export const btnSubmitApplication = document.getElementById('btnApplication');
 
 export const leadSlides = [
   {
-    img: './src/assets/img/lead-1.svg',
+    img: './assets/img/lead-1.svg',
     title: 'CRM-система и&nbsp;интернет-магазин запчастей',
     titleSpan: 'в&nbsp;одном',
     subtitle:
       'Комплексное решение для продажи запчастей: склад, проценка, работа с&nbsp;поставщиками, статистика, интеграции с&nbsp;другими сервисами&nbsp;— всё&nbsp;в&nbsp;одном!',
   },
   {
-    img: './src/assets/img/lead-2.svg',
+    img: './assets/img/lead-2.svg',
     title: 'Склад и проценка запчастей',
     titleSpan: 'в&nbsp;одном&nbsp;месте',
     subtitle:

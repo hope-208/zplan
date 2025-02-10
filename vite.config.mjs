@@ -10,6 +10,7 @@ const locals = {
 };
 
 export default defineConfig({
+  base: '/zplan/',
   resolve: {
     alias: [
       {
@@ -24,11 +25,6 @@ export default defineConfig({
   server: {
     open: true,
     port: 5353,
-  },
-  publicDir: '../public',
-  build: {
-    outDir: './dist',
-    emptyOutDir: true,
   },
   plugins: [pugPlugin(options, locals)],
 });

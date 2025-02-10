@@ -2,18 +2,18 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
   nav.mx-auto.flex.w-full.items-center.justify-between.p-4(class='sm:px-8 lg:gap-8 lg:max-w-7xl', aria-label='Global')
     .flex(class='lg:flex-1')
       a(href='/', class='-m-1.5 p-1.5')
-        img.object-cover.h-8.w-auto(src='./src/assets/img/logo.svg', alt='Логотип zplan.')
+        img.object-cover.h-8.w-auto(src='./assets/img/logo.svg', alt='Логотип zplan.')
 
     .hidden.items-center.justify-end.gap-2(class="lg:hidden md:flex")
       a.block(href='#')
         span.sr-only Close menu
-        img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
+        img.object-cover(src='./assets/img/whatsapp.svg', alt='Логотип whatsapp.')
       a.block(href='#')
         span.sr-only Close menu
-        img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип whatsapp.')
+        img.object-cover(src='./assets/img/telegram.svg', alt='Логотип whatsapp.')
 
     .flex(class='lg:hidden gap-3')
-        a(href='#').px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white Вход
+        a.px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white(href='https://zplan.ru/panel/login') Вход
         button.inline-flex.items-center.justify-center.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5', id="btnMenuOpen")
           span.sr-only Open main menu
           svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
@@ -26,16 +26,16 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
       a.block.font-semibold.text-gray-900(href='#', class='text-base hover:focus:text-emerald-400 hover:focus:underline') Контакты
 
     .hidden(class='lg:flex lg:flex-1 lg:justify-start lg:items-center lg:gap-5')
-      a(href='#').px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white Вход
-      a(href='#').px-4.py-2.rounded-xl.text-base.text-white.text-center.text-base.bg-gray-700(class="w-[171px] hover:focus:text-emerald-400") 1 месяц бесплатно
+      a.px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white(href="https://zplan.ru/panel/login") Вход
+      a.px-4.py-2.rounded-xl.text-base.text-white.text-center.text-base.bg-gray-700(href='#', class="w-[171px] hover:focus:text-emerald-400") 1 месяц бесплатно
 
     .hidden.items-center.justify-end.gap-2(class="lg:flex ")
       a.block(href='#')
         span.sr-only Close menu
-        img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
+        img.object-cover(src='./assets/img/whatsapp.svg', alt='Логотип whatsapp.')
       a.block(href='#')
         span.sr-only Close menu
-        img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип whatsapp.')
+        img.object-cover(src='./assets/img/telegram.svg', alt='Логотип whatsapp.')
 
   // Mobile menu
   div(class='lg:hidden hidden mobile-menu', role='dialog', aria-modal='true', id="mobileMenu")
@@ -44,9 +44,9 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
 
       .mx-auto.flex.w-full.items-center.justify-between.p-4.bg-gray-50.border-b.border-solid.border-gray-200
         a(href='/', class='-m-1.5 p-1.5')
-          img.object-cover.h-8.w-auto(src='./src/assets/img/logo.svg', alt='Логотип zplan.')
+          img.object-cover.h-8.w-auto(src='./assets/img/logo.svg', alt='Логотип zplan.')
         .flex(class='lg:hidden gap-3')
-          a(href='#').px-4.py-2.rounded-xl.text-base.text-center.text-gray-700.border.border-solid.border-gray-700.font-medium.bg-white Вход
+          a.px-4.py-2.rounded-xl.text-base.text-center.text-gray-700.border.border-solid.border-gray-700.font-medium.bg-white(href='https://zplan.ru/panel/login') Вход
           button.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5 button-close', id="btnMenuClose")
             span.sr-only Close menu
             svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
@@ -65,10 +65,10 @@ header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
             .flex.items-center.justify-center.gap-3
               a.block(href='#')
                 span.sr-only Close menu
-                img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
+                img.object-cover(src='./assets/img/whatsapp.svg', alt='Логотип whatsapp.')
               a.block(href='#')
                 span.sr-only Close menu
-                img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип whatsapp.')
+                img.object-cover(src='./assets/img/telegram.svg', alt='Логотип whatsapp.')
 
 
 script(type="module" src="../src/components/Popup.js" defer)
