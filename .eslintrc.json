@@ -12,37 +12,29 @@
     "plugin:prettier/recommended",
     "eslint-config-prettier"
   ],
-  "plugins": [
-    "import",
-    "prettier"
-  ],
+  "plugins": ["import", "prettier"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "rules": {
     "prettier/prettier": "error",
-    "no-console": "error",
+    "no-console": "warn",
     "import/no-extraneous-dependencies": [
       "error",
       {
         "devDependencies": true
       }
     ],
-    "import/unambiguous": "off"
+    "import/unambiguous": "off",
+    "no-underscore-dangle": ["off", { "allowAfterThisConstructor": true }]
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [
-          ".js"
-        ],
-        "path": [
-          "src"
-        ],
-        "moduleDirectory": [
-          "node_modules"
-        ]
+        "extensions": [".js"],
+        "path": ["src"],
+        "moduleDirectory": ["node_modules"]
       }
     }
   }

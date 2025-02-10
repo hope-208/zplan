@@ -1,0 +1,74 @@
+header.bg-slate-50.shadow-md.shadow-gray-50.max-w-full.w-full.fixed.top-0
+  nav.mx-auto.flex.w-full.items-center.justify-between.p-4(class='sm:px-8 lg:gap-8 lg:max-w-7xl', aria-label='Global')
+    .flex(class='lg:flex-1')
+      a(href='/', class='-m-1.5 p-1.5')
+        img.object-cover.h-8.w-auto(src='./src/assets/img/logo.svg', alt='Логотип zplan.')
+
+    .hidden.items-center.justify-end.gap-2(class="lg:hidden md:flex")
+      a.block(href='#')
+        span.sr-only Close menu
+        img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
+      a.block(href='#')
+        span.sr-only Close menu
+        img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип whatsapp.')
+
+    .flex(class='lg:hidden gap-3')
+        a(href='#').px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white Вход
+        button.inline-flex.items-center.justify-center.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5', id="btnMenuOpen")
+          span.sr-only Open main menu
+          svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
+            path(stroke-linecap='round', stroke-linejoin='round', d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5')
+
+    .hidden(class='lg:flex lg:items-center lg:gap-7 ')
+      a.block.font-semibold.text-gray-900(href='#', class='text-base hover:focus:text-emerald-400 hover:focus:underline') О нас
+      a.block.font-semibold.text-gray-900(href='#', class='text-base hover:focus:text-emerald-400 hover:focus:underline') Возможности
+      a.block.font-semibold.text-gray-900(href='#', class='text-base hover:focus:text-emerald-400 hover:focus:underline') Цены
+      a.block.font-semibold.text-gray-900(href='#', class='text-base hover:focus:text-emerald-400 hover:focus:underline') Контакты
+
+    .hidden(class='lg:flex lg:flex-1 lg:justify-start lg:items-center lg:gap-5')
+      a(href='#').px-4.py-2.rounded-xl.text-base.text-gray-700.text-center.border.border-solid.border-gray-700.font-medium.bg-white Вход
+      a(href='#').px-4.py-2.rounded-xl.text-base.text-white.text-center.text-base.bg-gray-700(class="w-[171px] hover:focus:text-emerald-400") 1 месяц бесплатно
+
+    .hidden.items-center.justify-end.gap-2(class="lg:flex ")
+      a.block(href='#')
+        span.sr-only Close menu
+        img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
+      a.block(href='#')
+        span.sr-only Close menu
+        img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип whatsapp.')
+
+  // Mobile menu
+  div(class='lg:hidden hidden mobile-menu', role='dialog', aria-modal='true', id="mobileMenu")
+    .fixed.inset-0.z-10
+    .fixed.inset-y-0.right-0.z-10.w-full.overflow-y-auto.bg-white.scroll(class='sm:max-w-sm sm:ring-1 sm:ring-gray-900/10')
+
+      .mx-auto.flex.w-full.items-center.justify-between.p-4.bg-gray-50.border-b.border-solid.border-gray-200
+        a(href='/', class='-m-1.5 p-1.5')
+          img.object-cover.h-8.w-auto(src='./src/assets/img/logo.svg', alt='Логотип zplan.')
+        .flex(class='lg:hidden gap-3')
+          a(href='#').px-4.py-2.rounded-xl.text-base.text-center.text-gray-700.border.border-solid.border-gray-700.font-medium.bg-white Вход
+          button.rounded-md.text-gray-700.cursor-pointer(type='button', class='-m-2.5 p-2.5 button-close', id="btnMenuClose")
+            span.sr-only Close menu
+            svg.size-6(fill='none', viewbox='0 0 24 24', stroke-width='1.5', stroke='currentColor', aria-hidden='true', data-slot='icon')
+              path(stroke-linecap='round', stroke-linejoin='round', d='M6 18 18 6M6 6l12 12')
+      .mt-4.p-4.flow-root
+        .-my-6.divide-y.flex.flex-col(class='divide-gray-500/10')
+          .space-y-2
+            .-mx-3.mb-8
+                a.block.rounded-lg.p-4.font-semibold.text-gray-900(href='#', class='text-2xl hover:bg-gray-50') О нас
+                a.block.rounded-lg.p-4.font-semibold.text-gray-900(href='#', class='text-2xl hover:bg-gray-50') Возможности
+                a.block.rounded-lg.p-4.font-semibold.text-gray-900(href='#', class='text-2xl hover:bg-gray-50') Цены
+                a.block.rounded-lg.p-4.font-semibold.text-gray-900(href='#', class='text-2xl hover:bg-gray-50') Контакты
+          .py-8.flex.flex-col.gap-3.mt-auto
+            a(href='#').px-4.py-2.rounded-xl.text-base.text-white.text-center.bg-emerald-400 1 месяц бесплатно
+            a.block.rounded-lg.px-3.text-base.text-center.underline.text-gray-900(href='mailto:support@zplan.ru', class='hover:focus:text-emerald-400') support@zplan.ru
+            .flex.items-center.justify-center.gap-3
+              a.block(href='#')
+                span.sr-only Close menu
+                img.object-cover(src='./src/assets/img/whatsapp.svg', alt='Логотип whatsapp.')
+              a.block(href='#')
+                span.sr-only Close menu
+                img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип whatsapp.')
+
+
+script(type="module" src="../src/components/Popup.js" defer)
