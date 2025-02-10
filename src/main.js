@@ -1,10 +1,10 @@
-import './index.css';
+import '@/index.css';
 
-import Api from './components/Api';
-import Popup from './components/Popup';
-import Slider from './components/Slider';
-import ApplicationInfo from './components/ApplicationInfo';
-import FormValidator from './components/FormValidator';
+import Api from '@/components/Api';
+import Popup from '@/components/Popup';
+import Slider from '@/components/Slider';
+import ApplicationInfo from '@/components/ApplicationInfo';
+import FormValidator from '@/components/FormValidator';
 import {
   btnMenuOpen,
   btnMenuClose,
@@ -12,7 +12,7 @@ import {
   btnSubmitApplication,
   applicationForm,
   settings,
-} from './utils/constants';
+} from '@/utils/constants';
 
 const api = new Api({
   baseUrl: '',
@@ -52,11 +52,12 @@ const application = new ApplicationInfo(
     application.loading(true);
     api
       .createApplication(inputValues)
-      .then((data) => {
+      .then(() => {
         application.reset();
       })
       .catch((err) => {
-        console.log(err);
+        // eslint-disable-next-line no-console
+        console.err(err);
       })
       .finally(() => {
         application.loading(false, 'Оставить заявку');

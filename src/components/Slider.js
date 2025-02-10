@@ -3,11 +3,11 @@ export default class Slider {
     this._container = document.querySelector(sliderSelector);
     this._slidesList = slides;
     this._currentSlide = 0;
-    this._timer;
+    this._timer = null;
   }
 
   showSlide() {
-    let slide = this._slidesList[this._currentSlide];
+    const slide = this._slidesList[this._currentSlide];
     if (slide) {
       document.querySelector('.lead').innerHTML = `
         <div class="slide">
@@ -25,7 +25,7 @@ export default class Slider {
         </div>
       `;
 
-      let slideElement = document.querySelector('.slide');
+      const slideElement = document.querySelector('.slide');
       slideElement.classList.add('active');
 
       setTimeout(() => {

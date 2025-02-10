@@ -13,11 +13,14 @@ export default class ApplicationInfo {
   _getInputValues() {
     const formData = new FormData(this._form);
 
-    console.log('%c%s', 'color: #00b300', formData);
-    const values = {};
-    for (const pair of formData.entries()) {
-      values[pair[0]] = pair[1];
-    }
+    const values = Array.from(formData.entries()).reduce(
+      (acc, [key, value]) => {
+        acc[key] = value;
+        return acc;
+      },
+      {},
+    );
+
     return values;
   }
 

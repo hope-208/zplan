@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url';
 import pugPlugin from 'vite-plugin-pug';
 
 const options = {
@@ -9,6 +10,14 @@ const locals = {
 };
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    ],
+  },
   preview: {
     open: true,
   },
