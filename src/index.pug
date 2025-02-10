@@ -46,7 +46,7 @@ main.container.w-full.max-w-full
     h3.font-bold.text-5xl.text-gray-900(class="lg:max-w-7xl") Новости
 
     include ./mixin/news-card.pug
-    .flex.flex-col.py-4.news-cards.gap-8.py-8(class="md:flex-row md:flex-wrap md:justify-center")
+    .flex.flex-col.py-4.news-cards.gap-8.py-8(class="md:grid md:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap")
       +newsCard('Lorem ipsum dolor sit amet consectetur.',
         '28.12.2024')
       +newsCard('Lorem ipsum dolor sit amet consectetur.',
@@ -87,7 +87,7 @@ main.container.w-full.max-w-full
               img.object-cover(src='./src/assets/img/telegram.svg', alt='Логотип telegram.')
 
   .flex.flex-col.px-4.py-8.gap-5.bg-gray-700.mx-auto(class="sm:px-8 md:py-10")
-    .flex.flex-col.gap-4.mx-auto(class="lg:px-8 lg:max-w-7xl lg:w-full")
+    .flex.flex-col.gap-4.w-full.mx-auto(class="lg:max-w-7xl xl:px-8")
       .flex.flex-col.gap-4(class="lg:flex-row-reverse lg:justify-between")
         .flex.flex-col.gap-4
           a(href='#').px-4.py-2.rounded-xl.text-base.text-emerald-400.font-semibold.text-center.bg-white(class="sm:text-lg sm:py-3") Вход
@@ -134,7 +134,7 @@ main.container.w-full.max-w-full
             a.text-base.text-white(href='#', class="hover:underline") Карта сайта
             a.text-base.text-white(href='#', class="hover:underline") Политика конфиденциальности
 
-  .flex.flex-col.gap-2.p-4.bg-white.mx-auto(class="sm:p-8 lg:gap-10 lg:flex-row  lg:max-w-7xl")
+  .flex.flex-col.gap-2.p-4.bg-white.mx-auto(class="sm:p-8 lg:gap-10 lg:flex-row  lg:max-w-7xl xl:gap-16")
     .hidden(class='lg:block lg:max-w-[180px]')
       a(href='/')
         img.object-cover.h-8.w-auto(src='./src/assets/img/logo.svg', alt='Логотип zplan.')
