@@ -8,11 +8,11 @@ import FormValidator from '@/components/FormValidator';
 import {
   btnMenuOpen,
   btnMenuClose,
-  leadSlides,
   btnSubmitApplication,
   applicationForm,
   settings,
 } from '@/utils/constants';
+import { Autoplay } from 'swiper/modules';
 
 const api = new Api({
   baseUrl: '',
@@ -34,36 +34,29 @@ btnMenuClose.addEventListener('click', () => {
 
 mobileMenuPopup.setEventListeners();
 
-const sliderLead = new Slider('.lead', leadSlides);
+let sliderLead = new Slider('.lead', {
+  direction: 'horizontal',
+  modules: [Autoplay],
+  effect: 'fade',
+  loop: true,
+  spaceBetween: 0,
+  slidesPerView: 'auto',
+  slidesPerGroup: 1,
+  centeredSlides: true,
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  edgeSwipeThreshold: 0,
+});
 
-sliderLead.showSlide();
-sliderLead.startTimer();
-sliderLead.setEventListeners();
+document.addEventListener('DOMContentLoaded', () => {
+  sliderLead = sliderLead.init();
+});
 
 const applicationFormValidation = new FormValidator(settings, applicationForm);
 applicationFormValidation.enableValidation();
-
-const application = new ApplicationInfo(
-  'name',
-  'phone',
-  'email',
-  'message',
-  (inputValues) => {
-    application.loading(true);
-    api
-      .createApplication(inputValues)
-      .then(() => {
-        application.reset();
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.err(err);
-      })
-      .finally(() => {
-        application.loading(false, 'Оставить заявку');
-      });
-  },
-);
 
 btnSubmitApplication.addEventListener('click', () => {
   applicationFormValidation.resetErrors();

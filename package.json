@@ -33,7 +33,10 @@
     "vite-plugin-pug": "^0.4.1"
   },
   "dependencies": {
+    "@google-cloud/recaptcha-enterprise": "^5.13.0",
     "cssnano": "^7.0.6",
+    "recaptcha-v3": "^1.11.3",
+    "swiper": "^11.2.2",
     "the-new-css-reset": "^1.11.3"
   },
   "gitHooks": {

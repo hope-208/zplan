@@ -10,7 +10,7 @@ https://www.figma.com/design/vfykQe2fZm6la6FPNcQZvl/Zplan.ru-(Site)-(Copy)?node-
 
 ## Используемые технологии:
 
-Pug, Tailwind css, JavaScript, Vite
+Pug, Tailwind css, Swiper, JavaScript, Vite
 
 ## Инструкция по установке:
 

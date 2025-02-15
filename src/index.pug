@@ -1,7 +1,27 @@
 include ./components/header/header.pug
 
 main.container.w-full.max-w-full
-  .flex.lead.container.w-full.mx-auto.mt-20(class="lg:max-w-7xl lg:px-4")
+  include ./mixin/slide.pug
+
+  .flex.lead.container.w-full.mx-auto.mt-20.swiper(class="lg:max-w-7xl lg:px-4")
+    .swiper-wrapper.cursor-grabbing(class="lg:max-w-7xl")
+      +slide('./assets/img/lead-1.svg',
+      'CRM-система и&nbsp;интернет-магазин запчастей',
+      'в&nbsp;одном',
+      'Комплексное решение для продажи запчастей: склад, проценка, работа с&nbsp;поставщиками, статистика, интеграции с&nbsp;другими сервисами&nbsp;— всё&nbsp;в&nbsp;одном!')
+      +slide('./assets/img/lead-2.svg',
+      'Склад и проценка запчастей',
+      'в&nbsp;одном&nbsp;месте',
+      'Zplan&nbsp;–&nbsp;это универсальная платформа по&nbsp;продаже запчастей! Она позволяет вести продажи, начиная от&nbsp;формирования цен и&nbsp;заканчивая ведением финансов клиента.')
+      +slide('./assets/img/lead-1.svg',
+      'CRM-система и&nbsp;интернет-магазин запчастей',
+      'в&nbsp;одном',
+      'Комплексное решение для продажи запчастей: склад, проценка, работа с&nbsp;поставщиками, статистика, интеграции с&nbsp;другими сервисами&nbsp;— всё&nbsp;в&nbsp;одном!')
+      +slide('./assets/img/lead-2.svg',
+      'Склад и проценка запчастей',
+      'в&nbsp;одном&nbsp;месте',
+      'Zplan&nbsp;–&nbsp;это универсальная платформа по&nbsp;продаже запчастей! Она позволяет вести продажи, начиная от&nbsp;формирования цен и&nbsp;заканчивая ведением финансов клиента.')
+
 
   include ./mixin/advantage.pug
 
@@ -59,6 +79,7 @@ main.container.w-full.max-w-full
 
     a.px-4.py-2.mx-auto.mt-2.mb-4.rounded-xl.border.border-gray-700.text-lg.font-semibold.text-gray-700.text-center.cursor-pointer Все новости
 
+
   .flex.flex-col.px-4.py-8.form-container.gap-8.mx-auto(class="sm:px-8 lg:flex-row-reverse lg:max-w-7xl lg:py-10")
     .flex.items-center.justify-center.w-full(class="lg:max-w-1/2")
       img.w-full.object-cover.p-4.bg-gray-300(src="./assets/img/form-img.svg", alt="")
@@ -66,7 +87,7 @@ main.container.w-full.max-w-full
       .block.mx-auto(class="sm:max-w-8/10")
         h3.text-2xl.text-center.font-semibold.text-gray-900.leading-none(class="sm:text-3xl md:text-4xl") Начните работу с&nbsp;программой
         h3.text-2xl.text-center.font-semibold.text-emerald-400.leading-none(class="sm:text-3xl md:text-4xl") Zplan
-      form.flex.flex-col.gap-5.form(id="formApplication", name="formApplication", novalidate)
+      form.flex.flex-col.gap-5.form(id="formApplication", name="formApplication", method="POST", novalidate)
         .flex.flex-col.py-2.gap-5
           input.py-2.px-4.text-base.rounded-md.border.border-gray-300.outline-0.form__input.caret-emerald-400(class="hover:focus:focus-visible:border-emerald-400 sm:text-lg", type="text", minLenght="2", placeholder="Имя", id="name", required="true")
           span.hidden.error.name-error.text-red-500.text-sm
@@ -75,7 +96,10 @@ main.container.w-full.max-w-full
           input.py-2.px-4.text-base.rounded-md.border.border-gray-300.outline-0.form__input.caret-emerald-400(class="hover:focus:focus-visible:border-emerald-400 sm:text-lg", type="email", minLenght="8", placeholder="Email", id="email", required="true")
           span.hidden.error.email-error.text-red-500.text-sm
           textarea.py-2.px-4.text-base.rounded-md.border.border-gray-300.outline-0.form__input.caret-emerald-400(class="hover:focus:focus-visible:border-emerald-400 sm:text-lg",  placeholder="Сообщение", id="message", rows="3")
-        button.px-4.py-2.mt-2.rounded-xl.bg-emerald-400.text-lg.font-semibold.text-white.text-center.cursor-pointer.button-submit.z-1(class="disabled:opacity-75 disabled:cursor-not-allowed sm:text-2xl sm:py-3", type="submit", for="formApplication", id="btnApplication") Оставить заявку
+        div.g-recaptcha.mx-auto(id="recaptcha", data-sitekey="6LcxLdYqAAAAAJVtvdTw12bGd3VVgas47Z62KCg4", action="createApplication")
+
+        button.px-4.py-2.mt-2.rounded-xl.bg-emerald-400.text-lg.font-semibold.text-white.text-center.cursor-pointer.button-submit.z-1(class="disabled:opacity-75 disabled:cursor-not-allowed sm:text-2xl sm:py-3",
+        type="submit", for="formApplication", id="btnApplication", data-sitekey="6LcOZtcqAAAAANgRwSPUTGIrKJFfEnxGVwAWGTy1") Оставить заявку
         .flex.flex-col.mx-auto(class="max-w-8/10")
           p.text-base.text-center.text-gray-900.leading-none Нажимая кнопку «Оставить заявку» вы&nbsp;соглашаетесь на&nbsp;обработку
           a.text-base.text-center.text-emerald-400.leading-none(href='#', class="hover:underline") персональных данных
