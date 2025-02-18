@@ -35,6 +35,10 @@
         "extensions": [".js"],
         "path": ["src"],
         "moduleDirectory": ["node_modules"]
+      },
+      "alias": {
+        "map": [["@", "./src"]],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".css"]
       }
     }
   }

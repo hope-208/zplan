@@ -1,17 +1,15 @@
-// import WebSocket from 'ws';
-
 export default class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
-    } else {
-      return Promise.reject(`код ошибки: ${res.status}`);
     }
+    return Promise.reject(new Error(`код ошибки: ${res.status}`));
   }
 
   createApplication({ name, phone, email, message }) {
@@ -19,10 +17,10 @@ export default class Api {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
-        name: name,
-        phone: phone,
-        email: email,
-        message: message,
+        name,
+        phone,
+        email,
+        message,
       }),
     }).then((res) => {
       return this._checkResponse(res);

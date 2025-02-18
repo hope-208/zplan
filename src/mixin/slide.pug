@@ -1,9 +1,11 @@
 mixin slide(img, title, titleSpan, subtitle)
 
-  .slide(class="p-4")
-    .flex.flex-col.p-4.gap-4(class='lead-slide')
-      img.object-cover(src=img, alt='')
-      .block
-        h1(class="text-3xl text-center font-semibold text-gray-700")=title
-        h1(class="text-3xl text-center font-semibold text-emerald-400")=titleSpan
-      p(class="text-sm text-center text-gray-700")=subtitle
+  .swiper-slide(class="lg:px-4")
+    .flex.flex-col.w-full.justify-center.p-4.gap-4.mx-auto(class='xl:p-0 xl:py-8 xl:flex-row-reverse xl:justify-between xl:px-4 md:gap-8 sm:max-w-8/10 xl:max-w-full xl:mx-0')
+      img.flex.justify-center.items-center.mx-auto(class='max-w-[200px] md:max-w-[300px] lg:max-w-[520px]', src=img, alt='')
+      .flex.flex-col.justify-center.gap-4.mx-auto(class='xl:items-start md:gap-8 xl:mx-0')
+        .block.mx-auto(class='sm:max-w-7/10 md:w-full md:mx-0 md:max-w-full')
+          h1.text-3xl.text-center.font-semibold.text-gray-700(class='sm:text-4xl lg:text-6xl xl:text-left lg:font-bold')!=title
+            h1.text-3xl.text-center.font-semibold.text-emerald-400(class='sm:text-4xl lg:text-6xl xl:text-left lg:font-bold')!=titleSpan
+        p.text-sm.text-center.text-gray-700(class='xl:max-w-8/10 sm:text-base md:text-lg xl:text-xl xl:text-left')!=subtitle
+        a.px-4.py-2.w-fit.mx-auto.rounded-xl.text-base.text-white.text-center.bg-emerald-400(href='#application', class='lg:px-5 lg:py-3 xl:m-0 lg:text-2xl') Начать работу

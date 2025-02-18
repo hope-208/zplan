@@ -13,21 +13,13 @@ export const btnMenuClose = document.getElementById('btnMenuClose');
 export const mobileMenu = document.getElementById('mobileMenu');
 export const btnSubmitApplication = document.getElementById('btnApplication');
 
-export const leadSlides = [
-  {
-    img: './src/assets/img/lead-1.svg',
-    title: 'CRM-система и&nbsp;интернет-магазин запчастей',
-    titleSpan: 'в&nbsp;одном',
-    subtitle:
-      'Комплексное решение для продажи запчастей: склад, проценка, работа с&nbsp;поставщиками, статистика, интеграции с&nbsp;другими сервисами&nbsp;— всё&nbsp;в&nbsp;одном!',
-  },
-  {
-    img: './src/assets/img/lead-2.svg',
-    title: 'Склад и проценка запчастей',
-    titleSpan: 'в&nbsp;одном&nbsp;месте',
-    subtitle:
-      'Zplan&nbsp;–&nbsp;это универсальная платформа по&nbsp;продаже запчастей! Она позволяет вести продажи, начиная от&nbsp;формирования цен и&nbsp;заканчивая ведением финансов клиента.',
-  },
-];
+export const smartCapthaContainer =
+  document.getElementById('captcha-container');
+
+export const modalInfo = document.getElementById('modalInfo');
+export const modalInfoImg = document.getElementById('modalImg');
+export const modalInfoTitle = document.getElementById('modalTitle');
+export const modalInfoSubtitle = document.getElementById('modalSubtitle');
+export const btnCloseModal = document.getElementById('btnCloseModal');
 
 export const applicationForm = document.forms.formApplication;
