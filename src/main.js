@@ -13,6 +13,11 @@ import {
   smartCapthaContainer,
   applicationForm,
   settings,
+  modalInfo,
+  modalInfoImg,
+  modalInfoTitle,
+  modalInfoSubtitle,
+  btnCloseModal,
 } from '@/utils/constants';
 
 const api = new Api({
@@ -56,6 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
   sliderLead = sliderLead.init();
 });
 
+function errorSubmit() {
+  modalInfoImg.setAttribute('src', './assets/img/error.svg');
+  modalInfoTitle.textContent = 'Внимание!';
+  modalInfoSubtitle.textContent =
+    'Пожалуйста, подтвердите, что вы не робот, чтобы отправить заявку.';
+  modalInfo.classList.remove('hidden');
+}
+
+function successSubmit() {
+  modalInfoImg.setAttribute('src', './assets/img/success.svg');
+  modalInfoTitle.textContent = 'Ваша заявка принята!';
+  modalInfoSubtitle.textContent = 'Благодарим за обращение.';
+  modalInfo.classList.remove('hidden');
+}
 const applicationFormValidation = new FormValidator(settings, applicationForm);
 applicationFormValidation.enableValidation();
 
@@ -69,11 +88,12 @@ const application = new ApplicationInfo(
   (inputValues) => {
     application.loading(true);
 
-    console.log(
-      '%c%s',
-      'color: #d0bfff',
-      smartCapthaContainer.querySelector('input[name="smart-token"]'),
-    );
+    if (
+      smartCapthaContainer.querySelector('input[name="smart-token"]').value ==
+      ''
+    ) {
+      errorSubmit();
+    }
     recaptchaToken = smartCapthaContainer.querySelector(
       'input[name="smart-token"]',
     ).value;
@@ -100,26 +120,28 @@ const application = new ApplicationInfo(
           console.error(
             `Allow access due to an error: code=${res.status}; message=${res.statusText}`,
           );
+          errorSubmit();
           return;
         } else {
-          console.log('%c%s', 'color: #99614d', inputValues);
           applicationForm.submit(inputValues, recaptchaToken);
-          // api
-          //   .createApplication(inputValues, recaptchaToken)
-          //   .then(() => {
-          //     application.reset();
-          //   })
-          //   .catch((err) => {
-          //     // eslint-disable-next-line no-console
-          //     console.err(err);
-          //   })
-          //   .finally(() => {
-          //     return application.loading(false, 'Оставить заявку');
-          //   });
+          api
+            .createApplication(inputValues, recaptchaToken)
+            .then(() => {
+              application.reset();
+            })
+            .catch((err) => {
+              // eslint-disable-next-line no-console
+              console.err(err);
+            })
+            .finally(() => {
+              successSubmit();
+              return application.loading(false, 'Оставить заявку');
+            });
         }
       });
     } else {
       console.error('recaptchaToken is empty');
+      errorSubmit();
       return application.loading(false, 'Оставить заявку');
     }
   },
@@ -130,6 +152,9 @@ btnSubmitApplication.addEventListener('click', () => {
   applicationFormValidation.toggleButtonState();
 });
 
+btnCloseModal.addEventListener('click', () => {
+  modalInfo.classList.add('hidden');
+});
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     e.preventDefault();

@@ -3,7 +3,7 @@ include ./components/header/header.pug
 main.container.w-full.max-w-full
 
   include ./mixin/modal.pug
-  +modal()
+  +modal('./assets/img/success.svg', 'Ваша заявка принята!', 'Благодарим за обращение.')(class="text-red-500")
 
   include ./mixin/slide.pug
 

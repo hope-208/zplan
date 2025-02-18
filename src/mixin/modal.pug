@@ -1,0 +1,19 @@
+mixin modal(img, title, subtitle)
+
+  .relative.z-10.hidden(id="modalInfo", aria-labelledby='modal-title', role='dialog', aria-modal='true')
+
+    .fixed.inset-0.transition-opacity(class='bg-gray-500/75', aria-hidden='true')
+    .fixed.inset-0.z-10.w-screen.overflow-y-auto
+      .flex.min-h-full.items-end.justify-center.p-4.text-center(class='sm:items-center sm:p-0')
+
+        .relative.m-auto.transform.overflow-hidden.rounded-xl.bg-white.text-left.shadow-xl.transition-all(class='sm:w-full sm:max-w-lg')
+          .bg-white()
+            button#btnCloseModal.absolute.right-0.p-2.cursor-pointer(class="hover:opacity-70")
+              img.text-black.w-full(class="max-w-[40px]", src="./assets/img/close.svg", alt="Кнопка: закрыть окно.")
+          .flex.flex-col.p-6.items-center.justify-center.gap-4
+              .mx-auto.flex.size-30.shrink-0.justify-center.rounded-full
+                img#modalImg.size-30(src=img alt="")
+              .text-center
+                h3#modalTitle.text-3xl.font-semibold.text-center.text-gray-900!=title
+                .mt-2
+                  p#modalSubtitle.text-xl.text-center.text-gray-500!=subtitle
