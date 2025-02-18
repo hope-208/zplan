@@ -1,6 +1,10 @@
 include ./components/header/header.pug
 
 main.container.w-full.max-w-full
+
+  include ./mixin/modal.pug
+  +modal()
+
   include ./mixin/slide.pug
 
   .flex.lead.container.w-full.mx-auto.mt-20.swiper(class="lg:max-w-7xl lg:px-4")
@@ -87,6 +91,7 @@ main.container.w-full.max-w-full
       .block.mx-auto(class="sm:max-w-8/10")
         h3.text-2xl.text-center.font-semibold.text-gray-900.leading-none(class="sm:text-3xl md:text-4xl") Начните работу с&nbsp;программой
         h3.text-2xl.text-center.font-semibold.text-emerald-400.leading-none(class="sm:text-3xl md:text-4xl") Zplan
+
       form.flex.flex-col.gap-5.form(id="formApplication", name="formApplication", method="POST", novalidate)
         .flex.flex-col.py-2.gap-5
           input.py-2.px-4.text-base.rounded-md.border.border-gray-300.outline-0.form__input.caret-emerald-400(class="hover:focus:focus-visible:border-emerald-400 sm:text-lg", type="text", minLenght="2", placeholder="Имя", id="name", required="true")
@@ -96,10 +101,12 @@ main.container.w-full.max-w-full
           input.py-2.px-4.text-base.rounded-md.border.border-gray-300.outline-0.form__input.caret-emerald-400(class="hover:focus:focus-visible:border-emerald-400 sm:text-lg", type="email", minLenght="8", placeholder="Email", id="email", required="true")
           span.hidden.error.email-error.text-red-500.text-sm
           textarea.py-2.px-4.text-base.rounded-md.border.border-gray-300.outline-0.form__input.caret-emerald-400(class="hover:focus:focus-visible:border-emerald-400 sm:text-lg",  placeholder="Сообщение", id="message", rows="3")
-        div.g-recaptcha.mx-auto(id="recaptcha", data-sitekey="6LcxLdYqAAAAAJVtvdTw12bGd3VVgas47Z62KCg4", action="createApplication")
+
+
+          div.smart-captcha.w-full.max-w-fit.mx-auto.box-border(id="captcha-container", data-sitekey="ysc1_QQyrjQvbYlJghLQMounLghsl6jarVHnOrQqfFFakdbed671b", style="min-width: 280px; height: 100px")
 
         button.px-4.py-2.mt-2.rounded-xl.bg-emerald-400.text-lg.font-semibold.text-white.text-center.cursor-pointer.button-submit.z-1(class="disabled:opacity-75 disabled:cursor-not-allowed sm:text-2xl sm:py-3",
-        type="submit", for="formApplication", id="btnApplication", data-sitekey="6LcOZtcqAAAAANgRwSPUTGIrKJFfEnxGVwAWGTy1") Оставить заявку
+        type="submit", for="formApplication", id="btnApplication") Оставить заявку
         .flex.flex-col.mx-auto(class="max-w-8/10")
           p.text-base.text-center.text-gray-900.leading-none Нажимая кнопку «Оставить заявку» вы&nbsp;соглашаетесь на&nbsp;обработку
           a.text-base.text-center.text-emerald-400.leading-none(href='#', class="hover:underline") персональных данных

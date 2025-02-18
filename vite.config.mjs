@@ -25,6 +25,22 @@ export default defineConfig({
   server: {
     open: true,
     port: 5353,
+    proxy: {
+      '/api': {
+        target: 'https://smartcaptcha.yandexcloud.net',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        configure: (proxy) => {
+          proxy.on('proxyReq', (proxyReq) => {
+            proxyReq.setHeader(
+              'Origin',
+              'https://smartcaptcha.yandexcloud.net',
+            );
+          });
+        },
+      },
+    },
   },
   plugins: [pugPlugin(options, locals)],
 });

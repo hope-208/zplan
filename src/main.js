@@ -1,5 +1,6 @@
 import '@/index.css';
 
+import { Autoplay } from 'swiper/modules';
 import Api from '@/components/Api';
 import Popup from '@/components/Popup';
 import Slider from '@/components/Slider';
@@ -9,10 +10,10 @@ import {
   btnMenuOpen,
   btnMenuClose,
   btnSubmitApplication,
+  smartCapthaContainer,
   applicationForm,
   settings,
 } from '@/utils/constants';
-import { Autoplay } from 'swiper/modules';
 
 const api = new Api({
   baseUrl: '',
@@ -58,13 +59,79 @@ document.addEventListener('DOMContentLoaded', () => {
 const applicationFormValidation = new FormValidator(settings, applicationForm);
 applicationFormValidation.enableValidation();
 
+let recaptchaToken = null;
+
+const application = new ApplicationInfo(
+  'name',
+  'phone',
+  'email',
+  'message',
+  (inputValues) => {
+    application.loading(true);
+
+    console.log(
+      '%c%s',
+      'color: #d0bfff',
+      smartCapthaContainer.querySelector('input[name="smart-token"]'),
+    );
+    recaptchaToken = smartCapthaContainer.querySelector(
+      'input[name="smart-token"]',
+    ).value;
+
+    if (recaptchaToken) {
+      fetch(
+        `/api/validate?secret=${import.meta.env.VITE_TOKEN_SMART_CAPTCHA_SERVER}&token=${recaptchaToken}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'x-www-form-urlencoded',
+          },
+        },
+      ).then((res) => {
+        console.log(
+          '%c%s',
+          'color: #8c0038',
+          'res',
+          res,
+          'res.json()',
+          res.json(),
+        );
+        if (res.status !== 200) {
+          console.error(
+            `Allow access due to an error: code=${res.status}; message=${res.statusText}`,
+          );
+          return;
+        } else {
+          console.log('%c%s', 'color: #99614d', inputValues);
+          applicationForm.submit(inputValues, recaptchaToken);
+          // api
+          //   .createApplication(inputValues, recaptchaToken)
+          //   .then(() => {
+          //     application.reset();
+          //   })
+          //   .catch((err) => {
+          //     // eslint-disable-next-line no-console
+          //     console.err(err);
+          //   })
+          //   .finally(() => {
+          //     return application.loading(false, 'Оставить заявку');
+          //   });
+        }
+      });
+    } else {
+      console.error('recaptchaToken is empty');
+      return application.loading(false, 'Оставить заявку');
+    }
+  },
+);
+
 btnSubmitApplication.addEventListener('click', () => {
   applicationFormValidation.resetErrors();
   applicationFormValidation.toggleButtonState();
 });
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (
