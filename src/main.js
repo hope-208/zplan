@@ -61,11 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
   sliderLead = sliderLead.init();
 });
 
-function errorSubmit() {
+function errorSubmitCaptcha() {
   modalInfoImg.setAttribute('src', './assets/img/error.svg');
   modalInfoTitle.textContent = 'Внимание!';
   modalInfoSubtitle.textContent =
     'Пожалуйста, подтвердите, что вы не робот, чтобы отправить заявку.';
+  modalInfo.classList.remove('hidden');
+}
+
+function errorSubmit() {
+  modalInfoImg.setAttribute('src', './assets/img/error.svg');
+  modalInfoTitle.textContent = 'Внимание!';
+  modalInfoSubtitle.textContent = 'При отправке данных произошла ошибка.';
   modalInfo.classList.remove('hidden');
 }
 
@@ -92,7 +99,7 @@ const application = new ApplicationInfo(
       smartCapthaContainer.querySelector('input[name="smart-token"]').value ==
       ''
     ) {
-      errorSubmit();
+      errorSubmitCaptcha();
     }
     recaptchaToken = smartCapthaContainer.querySelector(
       'input[name="smart-token"]',
@@ -121,7 +128,7 @@ const application = new ApplicationInfo(
             `Allow access due to an error: code=${res.status}; message=${res.statusText}`,
           );
           errorSubmit();
-          return;
+          return application.loading(false, 'Оставить заявку');
         } else {
           applicationForm.submit(inputValues, recaptchaToken);
           api
@@ -131,6 +138,7 @@ const application = new ApplicationInfo(
             })
             .catch((err) => {
               // eslint-disable-next-line no-console
+              errorSubmit();
               console.err(err);
             })
             .finally(() => {
@@ -141,7 +149,7 @@ const application = new ApplicationInfo(
       });
     } else {
       console.error('recaptchaToken is empty');
-      errorSubmit();
+      errorSubmitCaptcha();
       return application.loading(false, 'Оставить заявку');
     }
   },
