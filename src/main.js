@@ -107,7 +107,7 @@ const application = new ApplicationInfo(
 
     if (recaptchaToken) {
       fetch(
-        `/api/validate?secret=${import.meta.env.VITE_TOKEN_SMART_CAPTCHA_SERVER}&token=${recaptchaToken}`,
+        `/api/validate?secret=${window.VITE_TOKEN_SMART_CAPTCHA_SERVER}&token=${recaptchaToken}`,
         {
           method: 'POST',
           headers: {

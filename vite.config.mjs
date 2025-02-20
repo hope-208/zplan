@@ -43,4 +43,9 @@ export default defineConfig({
     },
   },
   plugins: [pugPlugin(options, locals)],
+  define: {
+    'import.meta.env.VITE_TOKEN_SMART_CAPTCHA_SERVER': JSON.stringify(
+      process.env.VITE_TOKEN_SMART_CAPTCHA_SERVER,
+    ),
+  },
 });
